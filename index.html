@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayant Raj Mohan | Presales Profile</title>
+  <style>
+    :root {
+      --bg: #f7f1eb;
+      --surface: rgba(255, 250, 246, 0.88);
+      --surface-strong: #fff8f2;
+      --ink: #201613;
+      --muted: #6b5a54;
+      --line: rgba(104, 74, 64, 0.16);
+      --line-strong: rgba(104, 74, 64, 0.28);
+      --accent: #ff4f37;
+      --accent-deep: #c93d2a;
+      --accent-soft: #ffe0d8;
+      --gold: #f2b94b;
+      --shadow: 0 18px 60px rgba(74, 37, 27, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 107, 72, 0.18), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(242, 185, 75, 0.18), transparent 24%),
+        linear-gradient(180deg, #fff7f2 0%, #f8f1eb 45%, #f4ece6 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.32), transparent 75%);
+      opacity: 0.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 26px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 248, 242, 0.72);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(71, 41, 32, 0.08);
+    }
+
+    .brandline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brandmark {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+      box-shadow: 0 0 0 6px rgba(255, 79, 55, 0.12);
+      flex: 0 0 auto;
+    }
+
+    .brandtext {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      font-size: 0.73rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .brandtitle {
+      font-size: 0.96rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 18px;
+    }
+
+    .hero-main,
+    .panel,
+    .timeline-card,
+    .proof-card,
+    .cta-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 36px;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 79, 55, 0.22) 0%, rgba(255, 79, 55, 0.02) 68%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-main h1,
+    .section h2,
+    .proof-card h3,
+    .timeline-card h3,
+    .cta-card h3 {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      margin: 0;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-main h1 {
+      font-size: clamp(2.6rem, 6vw, 4.1rem);
+      white-space: nowrap;
+      margin-bottom: 18px;
+    }
+
+    .hero-main p {
+      font-size: 1.08rem;
+      line-height: 1.72;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 22px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(173, 127, 110, 0.18);
+      color: #4b3933;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6a52 100%);
+      color: white;
+      box-shadow: 0 18px 36px rgba(255, 79, 55, 0.24);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.74);
+      color: var(--ink);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(145, 109, 94, 0.18);
+    }
+
+    .stat-value {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      font-size: 2.1rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .contact-card,
+    .positioning-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,248,242,0.84));
+      border: 1px solid rgba(145, 109, 94, 0.18);
+    }
+
+    .contact-card h3,
+    .positioning-card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-list,
+    .positioning-points,
+    .panel-list,
+    .proof-list,
+    .timeline-list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.58;
+    }
+
+    .contact-list a {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    main {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      padding: 28px;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 5vw, 2.7rem);
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1rem;
+      max-width: 64ch;
+    }
+
+    .panel-list .item,
+    .timeline-list .item,
+    .proof-list .item {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .panel-list .item::before,
+    .timeline-list .item::before,
+    .proof-list .item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      box-shadow: 0 0 0 4px rgba(255, 79, 55, 0.1);
+    }
+
+    .panel-list strong,
+    .timeline-list strong {
+      color: var(--ink);
+    }
+
+    .stacked {
+      display: grid;
+      gap: 18px;
+      height: 100%;
+    }
+
+    .timeline-card,
+    .proof-card,
+    .cta-card {
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .timeline-card h3,
+    .proof-card h3,
+    .cta-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .supporting-text {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 0.98rem;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .proof-card {
+      min-height: 100%;
+    }
+
+    .quote {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 79, 55, 0.1), rgba(242, 185, 75, 0.14));
+      border: 1px solid rgba(201, 61, 42, 0.14);
+      color: #4a2f28;
+      line-height: 1.72;
+      font-size: 1rem;
+      margin-top: 18px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 18px 4px 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: rise 700ms ease forwards;
+    }
+
+    .delay-1 { animation-delay: 90ms; }
+    .delay-2 { animation-delay: 180ms; }
+    .delay-3 { animation-delay: 270ms; }
+    .delay-4 { animation-delay: 360ms; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .section-grid,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-strip,
+      .strengths-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-main {
+        padding: 30px 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(calc(100% - 20px), var(--max));
+        padding-top: 16px;
+      }
+
+      .topbar {
+        border-radius: 24px;
+        padding: 16px;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero-main h1 {
+        max-width: 12ch;
+      }
+
+      .hero-main,
+      .panel,
+      .timeline-card,
+      .proof-card,
+      .cta-card {
+        border-radius: 22px;
+      }
+
+      .stats-strip,
+      .strengths-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar reveal">
+      <div class="brandline">
+        <div class="brandmark"></div>
+        <div class="brandtext">
+          <div class="eyebrow">Personal Profile</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#overview">Overview</a>
+        <a href="#impact">Highlights</a>
+        <a href="Jayant%20Raj%20Mohan%20%E2%80%94%20Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main reveal delay-1">
+        <div class="eyebrow">A Short Introduction</div>
+        <h1>Jayant Raj Mohan</h1>
+        <p>
+          I’m currently a Consultant in Adobe’s Digital Strategy Group, where I support enterprise presales
+          through discovery, solutioning, use-case framing, customer insights assessments, north-star journeys,
+          executive storytelling, and field enablement.
+          This page is a brief introduction to the Adobe work most relevant to a Technical Presales conversation.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="Jayant%20Raj%20Mohan%20%E2%80%94%20Resume.pdf" download>Download Resume</a>
+          <a class="button secondary" href="mailto:jayantmohan@adobe.com">Email</a>
+          <a class="button secondary" href="https://linkedin.com/in/jayantrajmohan">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="reveal delay-2">
+        <div class="stats-strip">
+          <div class="stat">
+            <div class="stat-value">80+</div>
+            <div class="stat-label">Enterprise engagements across regions and industries</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$30M+</div>
+            <div class="stat-label">Booked revenue supported through presales work</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$120M+</div>
+            <div class="stat-label">Pipeline influenced through solution framing and deliverables</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">570+</div>
+            <div class="stat-label">POVs generated through the field enablement platform</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal delay-2" id="overview">
+        <div class="panel">
+          <div class="eyebrow">Overview</div>
+          <h2>What I bring</h2>
+          <p class="section-intro">
+            My Adobe work combines customer-facing presales support, Adobe solution fluency, gap identification, and field enablement.
+          </p>
+          <div class="strengths-grid">
+            <div class="timeline-card">
+              <div class="eyebrow">Presales</div>
+              <h3>Customer work</h3>
+              <div class="timeline-list">
+                <div class="item"><strong>Discovery</strong> across enterprise opportunities and stakeholder groups.</div>
+                <div class="item"><strong>Use-case framing</strong>, north-star journeys, and customer insights assessments.</div>
+                <div class="item"><strong>Solutioning</strong> that identifies gaps and recommends potential Adobe solution paths.</div>
+              </div>
+            </div>
+
+            <div class="timeline-card">
+              <div class="eyebrow">Adobe Solutions</div>
+              <h3>Solution areas</h3>
+              <div class="timeline-list">
+                <div class="item"><strong>Experience Cloud</strong> exposure across AEM Sites, AEM Assets, Adobe Commerce, AEP CDP, CJA, and AJO.</div>
+                <div class="item"><strong>Content Supply Chain</strong> support involving Firefly and GenStudio sales plays.</div>
+                <div class="item"><strong>Certification</strong> in Adobe Commerce Business Practitioner.</div>
+              </div>
+            </div>
+
+            <div class="timeline-card">
+              <div class="eyebrow">Partnership</div>
+              <h3>How I work</h3>
+              <div class="timeline-list">
+                <div class="item"><strong>Close collaboration</strong> with Solution Consultants and Account Executives.</div>
+                <div class="item"><strong>Field support</strong> through alignment, visibility, and enablement mechanisms.</div>
+                <div class="item"><strong>Enablement mindset</strong> through repeatable content, tools, and operating support.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal delay-2" id="impact">
+        <div class="panel">
+          <div class="eyebrow">Impact</div>
+          <h2>Selected highlights</h2>
+          <p class="section-intro">
+            The Adobe work below is most relevant to a Technical Presales role.
+          </p>
+          <div class="proof-grid">
+            <article class="proof-card">
+              <div class="eyebrow">Customer-Facing Adobe Work</div>
+              <h3>Enterprise Presales</h3>
+              <div class="proof-list">
+                <div class="item">Led 80+ enterprise engagements across NA, EMEA, and APAC.</div>
+                <div class="item">Contributed to $30M+ booked revenue and $120M+ pipeline influenced.</div>
+                <div class="item">Delivered POVs, CXI benchmarks, Personalization at Scale, and GEO frameworks.</div>
+              </div>
+            </article>
+
+            <article class="proof-card">
+              <div class="eyebrow">Field Partnership</div>
+              <h3>FSI Americas</h3>
+              <div class="proof-list">
+                <div class="item">Served as FSI Americas lead for DSG.</div>
+                <div class="item">Partnered closely with Solution Consultants and Account Executives around active deal cycles and industry priorities.</div>
+                <div class="item">Built partner alignment cadences and visibility mechanisms that created demand for DSG support.</div>
+              </div>
+            </article>
+
+            <article class="proof-card">
+              <div class="eyebrow">Presales Enablement</div>
+              <h3>POV Generator</h3>
+              <div class="proof-list">
+                <div class="item">Built the business case for an AI-enabled presales platform rooted in recurring field bottlenecks.</div>
+                <div class="item">Reduced deliverable creation from 2 weeks to under 5 minutes.</div>
+                <div class="item">Scaled to 200+ users and generated 570+ POVs.</div>
+              </div>
+            </article>
+
+            <article class="proof-card">
+              <div class="eyebrow">Knowledge Foundation</div>
+              <h3>POV Portal</h3>
+              <div class="proof-list">
+                <div class="item">Standardized 500+ enterprise POVs into a structured repository.</div>
+                <div class="item">Reached 2,500+ views and 500+ downloads.</div>
+                <div class="item">Created a reusable knowledge foundation for DSG and SC teams.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+</body>
+</html>
