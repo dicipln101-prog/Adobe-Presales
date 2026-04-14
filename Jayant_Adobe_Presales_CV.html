@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayant Raj Mohan — CV</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 8.35pt;
+      line-height: 1.4;
+      color: #111;
+      background: #d6d3cd;
+    }
+
+    /* ── A4 Page Shell ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: #fff;
+      padding: 11mm 11mm 9mm;
+      box-shadow: 0 6px 36px rgba(0,0,0,0.18);
+    }
+
+    .page + .page {
+      margin-top: 18px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        padding: 8mm 9mm 7mm;
+        min-height: unset;
+      }
+
+      .cv-name {
+        font-size: 18pt;
+      }
+
+      .cv-contact {
+        font-size: 7.2pt;
+        margin-top: 1.5pt;
+      }
+
+      hr.rule-heavy {
+        margin: 4pt 0 3pt;
+      }
+
+      hr.rule-light {
+        margin: 3pt 0 3pt;
+      }
+
+      .summary {
+        font-size: 7.85pt;
+        line-height: 1.3;
+        margin-bottom: 1.5pt;
+      }
+
+      .sec {
+        font-size: 8pt;
+        margin: 4.5pt 0 2.5pt;
+        padding-bottom: 1pt;
+      }
+
+      .job-org,
+      .job-title,
+      .sub,
+      ul.cv li,
+      .sk td,
+      .ft-label,
+      .ft-body {
+        font-size: 7.9pt;
+      }
+
+      .job-title {
+        margin-top: 0.5pt;
+        margin-bottom: 1.5pt;
+      }
+
+      .sub {
+        margin: 3.5pt 0 1.25pt;
+      }
+
+      ul.cv li {
+        line-height: 1.22;
+        margin-bottom: 0.7pt;
+      }
+
+      .sk td {
+        line-height: 1.2;
+        padding: 1.2pt 0;
+      }
+
+      .footer {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8pt;
+      }
+
+      .ft-body {
+        line-height: 1.24;
+      }
+    }
+
+    /* ── Header ── */
+    .cv-name {
+      font-size: 20pt;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: #0d1a2b;
+      line-height: 1.05;
+    }
+
+    .cv-contact {
+      text-align: center;
+      font-size: 7.8pt;
+      color: #444;
+      margin-top: 3.5pt;
+      letter-spacing: 0.1px;
+    }
+
+    .cv-contact a { color: #444; text-decoration: none; }
+
+    hr.rule-heavy {
+      border: none;
+      border-top: 1.5px solid #0d1a2b;
+      margin: 5pt 0 4pt;
+    }
+
+    hr.rule-light {
+      border: none;
+      border-top: 0.6px solid #aaa;
+      margin: 4pt 0 4pt;
+    }
+
+    /* ── Summary ── */
+    .summary {
+      font-size: 8.35pt;
+      line-height: 1.46;
+      color: #1a1a1a;
+      margin-bottom: 4pt;
+    }
+
+    /* ── Section Heading ── */
+    .sec {
+      font-size: 8.5pt;
+      font-variant: small-caps;
+      font-weight: bold;
+      letter-spacing: 1.1px;
+      color: #0d1a2b;
+      border-bottom: 0.8px solid #0d1a2b;
+      padding-bottom: 2pt;
+      margin: 7pt 0 4.5pt;
+    }
+
+    /* ── Job Block ── */
+    .job-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8pt;
+    }
+
+    .job-org {
+      font-weight: bold;
+      font-size: 8.5pt;
+      color: #0d1a2b;
+    }
+
+    .job-date {
+      font-size: 7.8pt;
+      color: #555;
+      font-style: italic;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .job-title {
+      font-style: italic;
+      font-size: 8.4pt;
+      color: #333;
+      margin-top: 1pt;
+      margin-bottom: 2.5pt;
+    }
+
+    /* ── Sub-label within job ── */
+    .sub {
+      font-size: 8.2pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #666;
+      margin: 4pt 0 1.5pt;
+    }
+
+    /* ── Bullets ── */
+    ul.cv {
+      padding-left: 12pt;
+    }
+
+    ul.cv li {
+      font-size: 8.3pt;
+      line-height: 1.31;
+      color: #1a1a1a;
+      margin-bottom: 1.2pt;
+    }
+
+    ul.cv li strong { color: #0d1a2b; }
+
+    /* ── Skills Table ── */
+    .sk {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sk td {
+      font-size: 8.2pt;
+      line-height: 1.28;
+      vertical-align: top;
+      padding: 1.8pt 0;
+    }
+
+    .sk-label {
+      font-weight: bold;
+      color: #0d1a2b;
+      white-space: nowrap;
+      padding-right: 10pt;
+      width: 98pt;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12pt;
+      margin-top: 3pt;
+    }
+
+    .ft-label {
+      font-size: 8.2pt;
+      font-variant: small-caps;
+      font-weight: bold;
+      letter-spacing: 0.9px;
+      color: #0d1a2b;
+      border-bottom: 0.5px solid #bbb;
+      margin-bottom: 4pt;
+      padding-bottom: 1pt;
+    }
+
+    .ft-body {
+      font-size: 8.1pt;
+      color: #333;
+      line-height: 1.36;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAME & CONTACT -->
+  <div class="cv-name">Jayant Raj Mohan</div>
+  <div class="cv-contact">
+    +91-8075844435 &nbsp;&middot;&nbsp; jayantmohan@adobe.com &nbsp;&middot;&nbsp;
+    <a href="https://linkedin.com/in/jayantrajmohan">linkedin.com/in/jayantrajmohan</a>
+    &nbsp;&middot;&nbsp; Bengaluru, India
+  </div>
+
+  <hr class="rule-heavy">
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    Presales and strategy professional with 5+ years across enterprise solutioning, customer insights, use-case framing, and field enablement. Within Adobe's Digital Strategy Group, led <strong>80+ enterprise engagements</strong> across Experience Cloud and Content Supply Chain motions, helping customers identify gaps, shape north-star journeys, and evaluate potential Adobe solution paths through strategic assessments and executive-ready narratives. Brings strong Adobe product acumen, close partnership with Solution Consultants and Account Executives, and a track record of scaling presales through scalable frameworks and tools.
+  </div>
+
+  <hr class="rule-light">
+
+  <!-- ══ EXPERIENCE ══ -->
+  <div class="sec">Professional Experience</div>
+
+  <!-- Adobe -->
+  <div class="job-row">
+    <div class="job-org">Adobe Systems India Private Limited</div>
+    <div class="job-date">January 2023 – Present</div>
+  </div>
+  <div class="job-title">Consultant, Digital Strategy Group (DSG) &nbsp;&middot;&nbsp; Bengaluru</div>
+
+  <div class="sub">Enterprise Presales &amp; Solutioning</div>
+  <ul class="cv">
+    <li>Led <strong>80+ enterprise presales engagements</strong> across Retail, FSI, Travel &amp; Hospitality, Hi-Tech, and CPG — running discovery, defining use cases and north-star journeys, identifying customer gaps, and delivering executive-ready POVs and assessments across NA, EMEA, and APAC</li>
+    <li>Delivered strategic assessments including POVs, CXI Benchmarks, Personalization at Scale, and GEO frameworks — translating customer priorities and insight gaps into Adobe recommendations across <strong>Experience Cloud</strong> solution areas</li>
+    <li>Supported <strong>Firefly and GenStudio engagements</strong> within Content Supply Chain sales plays, helping connect generative AI, content operations, and customer experience priorities for senior business stakeholders</li>
+    <li>Contributed to <strong>$30M+ in booked revenue</strong> and <strong>$120M+ in pipeline influenced</strong> through presales support, solution framing, and deliverable quality</li>
+  </ul>
+
+  <div class="sub">FSI Americas &amp; SC Partnership</div>
+  <ul class="cv">
+    <li>Served as the <strong>FSI Americas lead</strong> for Digital Strategy Group, partnering closely with Solution Consultants and Account Executives to align team capabilities to active deal cycles and industry priorities</li>
+    <li>Built partner alignment decks, recurring communication cadences, enablement touchpoints, and spotlight showcases that strengthened field visibility and created demand for DSG support</li>
+  </ul>
+
+  <div class="sub">Presales Enablement &amp; Tools</div>
+  <ul class="cv">
+    <li>Built the business case for the <strong>POV Generator</strong> and partnered cross-functionally to launch an AI-enabled presales platform that reduced strategic deliverable creation from 2 weeks to under 5 minutes</li>
+    <li>Scaled the platform to <strong>200+ active users across DSG and SC teams</strong>, generating <strong>570+ POVs</strong>, and added Power BI visibility into adoption and pipeline impact</li>
+    <li>Standardised <strong>500+ enterprise POVs</strong> into the <strong>POV Portal</strong>, a structured repository with multi-dimensional taxonomy that became the single source of truth for DSG and SC strategic deliverables — 2,500+ views, 500+ downloads</li>
+  </ul>
+
+  <!-- Infosys -->
+  <div class="job-row" style="margin-top:8pt;">
+    <div class="job-org">Infosys Limited</div>
+    <div class="job-date">August 2020 – December 2022</div>
+  </div>
+  <div class="job-title">Presales Consultant — EMEA Regional Lead &nbsp;&middot;&nbsp; Bengaluru</div>
+
+  <ul class="cv">
+    <li><strong>EMEA regional lead</strong> for Microsoft Dynamics 365 CRM and Power Platform — owned the full presales cycle from discovery to deal closure across enterprise accounts in European and Middle Eastern markets, contributing to <strong>$100M+ enterprise pipeline</strong></li>
+    <li>Led C-suite discovery workshops, built tailored demos and business cases, authored RFP responses, and delivered competitive positioning across diverse industries and geographies</li>
+    <li>Built reusable solution frameworks and competitive playbooks that reduced presales cycle time and raised consistency across the regional team</li>
+  </ul>
+
+  <div class="sec">Skills &amp; Platform Knowledge</div>
+  <table class="sk">
+    <tr>
+      <td class="sk-label">Core Skills</td>
+      <td>Enterprise Discovery &middot; Solution Positioning &middot; POV / Customer Insights Development &middot; Strategic Assessments &middot; RFP/RFI Responses &middot; Executive Storytelling &middot; Consultative Selling &middot; Stakeholder Management</td>
+    </tr>
+    <tr>
+      <td class="sk-label">Adobe Solutions</td>
+      <td>AEM Sites &middot; AEM Assets &middot; Adobe Commerce &middot; AEP CDP &middot; CJA &middot; AJO &middot; Firefly &middot; GenStudio &middot; Adobe Express</td>
+    </tr>
+    <tr>
+      <td class="sk-label">Adobe Ecosystem</td>
+      <td>Experience Cloud Presales &middot; Content Supply Chain Sales Plays &middot; Creative Cloud Familiarity &middot; Solution Consultant / AE Partnership &middot; Field Enablement</td>
+    </tr>
+    <tr>
+      <td class="sk-label">Enablement</td>
+      <td>Adoption Analytics &middot; Partner Alignment &middot; Cross-Regional Collaboration &middot; Internal Enablement &amp; Adoption &middot; Knowledge Systems</td>
+    </tr>
+    <tr>
+      <td class="sk-label">Tools</td>
+      <td>D365 Sales &middot; Power BI &middot; Power Automate &middot; Excel &middot; PowerPoint</td>
+    </tr>
+  </table>
+
+  <hr class="rule-light">
+
+  <div class="sec">Education, Certifications &amp; Awards</div>
+
+  <div class="footer">
+    <div>
+      <div class="ft-label">Education</div>
+      <div class="ft-body">
+        <strong>PGDM (MBA Equivalent)</strong>, Marketing<br>
+        BIMTECH, Noida &middot; 2018–2020<br>
+        <strong>BBA</strong>, General Management<br>
+        Amrita School of Arts &amp; Sciences &middot; 2015–2018
+      </div>
+    </div>
+    <div>
+      <div class="ft-label">Certifications</div>
+      <div class="ft-body">
+        GPT-4 Foundations<br>
+        Adobe Commerce Business Practitioner<br>
+        PL-900 &middot; Microsoft Power Platform<br>
+        MB-910 &middot; Dynamics 365 CRM Fundamentals
+      </div>
+    </div>
+    <div>
+      <div class="ft-label">Awards</div>
+      <div class="ft-body">
+        Adobe Made It Happen Award &middot; Q3 2025<br>
+        Infosys INSTA Award &middot; Q1 2021
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
